@@ -1,1 +1,1 @@
-alert(0);
+fetch('https://ll.requestcatcher.com/');
