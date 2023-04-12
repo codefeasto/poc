@@ -2,7 +2,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const ws = new WebSocket(`ws://188.166.175.0:31972//ws`);
+const ws = new WebSocket(`ws://188.166.175.0:31972/ws`);
 
 sleep(2000);
 
