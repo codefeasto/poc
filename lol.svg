@@ -6,7 +6,7 @@
 	.st1{fill:#FFFFFF;}
 </style>
 <script>
-	alert(1);
+	alert(window.origin);
 	console.log('done');
 </script>
 </svg>
