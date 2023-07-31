@@ -5,8 +5,5 @@
 	.st0{fill:#E3000B;}
 	.st1{fill:#FFFFFF;}
 </style>
-<script>
-	alert(window.origin);
-	console.log('done');
-</script>
+	<img src=x onerror=alert(0)>
 </svg>
